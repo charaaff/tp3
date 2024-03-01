@@ -9,10 +9,9 @@
 </head>
 <body>
 <h1>Liste des Employés</h1>
-<ul th:each="employee : ${employees}">
-    <li
-            th:attr="style=${'background:' + employee.fonction.codeCouleur}"
-            th:text="${employee.name}"></li>
+
+<ul th:each="employee : ${employees}" style="display:flex; list-style-type:none;">
+    <a th:href="@{/employee/{id}(id=${employee.id})}" th:text="${employee.id}"></a><li th:text="${employee.name}" th:attr="style='background:' + ${employee.fonction.getCodeCouleur}"></li>
 </ul>
 
 <h2>Ajouter un nouvel employé</h2>

@@ -1,33 +1,17 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<link rel="stylesheet" th:href="@{/css/picnic.css}" />
+<html lang="fr" xmlns:th="http://www.thymeleaf.org%22%3E/">
 <head>
     <meta charset="UTF-8">
-    <title>Liste des Employés</title>
+<title th:text="${employee.name}"></title>
 </head>
 <body>
-<h1>Liste des Employés</h1>
-<table>
-    <thead>
-    <tr>
-        <th>ID</th>
-        <th>Nom</th>
-        <th>Email</th>
-        <th>Téléphone</th>
-        <th>Adresse</th>
-        <th>Fonction</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="employee : ${employees}">
-        <td th:text="${employee.id}">ID</td>
-        <td th:text="${employee.name}">Nom</td>
-        <td th:text="${employee.email}">Email</td>
-        <td th:text="${employee.phone}">Téléphone</td>
-        <td th:text="${employee.address}">Adresse</td>
-        <td th:text="${employee.fonction}">Fonction</td>
-    </tr>
-    </tbody>
-</table>
+<h1>Fiche employée</h1>
+<p><a th:href="@{/}">Home</a></p>
+
+<p>Nom : <span th:text="${employee.name}"></span> </p>
+<p>Adresse : <span th:text="${employee.address}"></span> </p>
+<p>Courriel : <span th:text="${employee.email}"></span> </p>
+<p>Téléphone : <span th:text="${employee.phone}"></span> </p>
+<p>Fonction : <span th:text="${employee.fonction}"></span> </p>
 </body>
 </html>
